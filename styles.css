@@ -1,0 +1,199 @@
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: none black;
+}
+
+.bgImage {
+  background: url('bg.png') no-repeat center center transparent;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.something h1 {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+}
+.home {
+  position: absolute;
+  z-index: 999;
+  color: white;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(0, -20%);
+  font-family: 'Comfortaa', sans-serif;
+}
+
+body.secure:after {
+  content: '';
+  background: rgba(0, 0, 0, 0.6);
+}
+
+a {
+  display: block;
+  width: 220px;
+  height: 70px;
+  z-index: 1000;
+}
+
+a:after {
+  content: '';
+  background: linear-gradient(120deg, #6559ae, #ff7159, #6559ae);
+  background-size: 400% 400%;
+  -webkit-clip-path: polygon(
+    0% 100%,
+    4px 100%,
+    4px 4px,
+    216px 4px,
+    216px 66px,
+    4px 66px,
+    4px 100%,
+    100% 100%,
+    100% 0%,
+    0% 0%
+  );
+  animation: gradient 3s ease-in-out infinite,
+    border 1s forwards ease-in-out reverse;
+}
+
+a > span {
+  display: block;
+  background: linear-gradient(120deg, #6559ae, #ff7159, #6559ae);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 3s ease-in-out infinite;
+}
+
+/* helpers */
+.absolute-centering,
+body:after,
+a,
+a:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.text-formatting,
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 70px;
+  font-family: 'Squada One', cursive;
+  font-size: 28px;
+}
+
+/* motion */
+@keyframes gradient {
+  0% {
+    background-position: 14% 0%;
+  }
+  50% {
+    background-position: 87% 100%;
+  }
+  100% {
+    background-position: 14% 0%;
+  }
+}
+
+@keyframes border {
+  0% {
+    -webkit-clip-path: polygon(
+      0% 100%,
+      4px 100%,
+      4px 4px,
+      216px 4px,
+      216px 66px,
+      4px 66px,
+      4px 100%,
+      100% 100%,
+      100% 0%,
+      0% 0%
+    );
+  }
+  25% {
+    -webkit-clip-path: polygon(
+      0% 100%,
+      4px 100%,
+      4px 4px,
+      216px 4px,
+      216px 66px,
+      216px 66px,
+      216px 100%,
+      100% 100%,
+      100% 0%,
+      0% 0%
+    );
+  }
+  50% {
+    -webkit-clip-path: polygon(
+      0% 100%,
+      4px 100%,
+      4px 4px,
+      216px 4px,
+      216px 4px,
+      216px 4px,
+      216px 4px,
+      216px 4px,
+      100% 0%,
+      0% 0%
+    );
+  }
+  75% {
+    -webkit-clip-path: polygon(
+      0% 100%,
+      4px 100%,
+      4px 4px,
+      4px 4px,
+      4px 4px,
+      4px 4px,
+      4px 4px,
+      4px 4px,
+      4px 0%,
+      0% 0%
+    );
+  }
+  100% {
+    -webkit-clip-path: polygon(
+      0% 100%,
+      4px 100%,
+      4px 100%,
+      4px 100%,
+      4px 100%,
+      4px 100%,
+      4px 100%,
+      4px 100%,
+      4px 100%,
+      0% 100%
+    );
+  }
+}
